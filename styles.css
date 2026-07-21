@@ -1,0 +1,8 @@
+body{font-family:Arial,sans-serif;margin:0;color:#111}
+.container{width:min(1100px,90%);margin:auto}
+.navbar{padding:20px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
+nav a{margin-right:20px;color:#111;text-decoration:none}
+.hero{padding:100px 0}
+h1{font-size:56px}h2{font-size:36px}
+.btn{display:inline-block;background:#111;color:#fff;padding:14px 22px;border-radius:30px;text-decoration:none}
+section{padding:60px 0}
