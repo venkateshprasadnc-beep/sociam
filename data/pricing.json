@@ -1,0 +1,88 @@
+{
+  "_readme": "Single source of truth for prices and scope. The website, the configurator and Ask Sociam all read this file. Change a value, redeploy, done. Only entries with an 'amount' are ever priced; everything else shows 'Request a quote'. Scope limits are shown publicly only when scope.status is 'approved'.",
+  "baseCurrency": "USD",
+  "displayCurrencies": ["USD", "INR", "GBP", "EUR", "SAR", "AED", "CAD", "AUD"],
+  "paymentCurrencies": ["USD"],
+  "packages": {
+    "re-website": {
+      "name": "Real Estate Website",
+      "businessType": "real-estate",
+      "amount": 300,
+      "billing": "one-time",
+      "summary": "A focused website for real estate developers, builders, brokers and channel partners who need a credible presence and a clear way to generate enquiries.",
+      "includes": [
+        "UI/UX design on a Sociam real estate template",
+        "Copywriting for the agreed pages",
+        "Basic SEO and GEO setup",
+        "Domain-related coverage, as defined in your scope",
+        "Hosting and SSL, as defined in your scope",
+        "Google Business Profile integration where applicable",
+        "Enquiry form and WhatsApp click-to-chat",
+        "Cross-device testing before launch"
+      ],
+      "scope": {
+        "status": "draft",
+        "pages": "Up to 5 pages: Home, About, Projects or Listings, Services, Contact",
+        "content": "Up to 6 project or listing entries",
+        "revisions": "2 rounds of revisions",
+        "timeline": "10 working days from receiving your content",
+        "domain": "First-year registration of one .com or .in domain up to $15; renewals at cost; the domain is registered in your name",
+        "hosting": "12 months hosting and SSL included; renewal quoted 30 days before expiry",
+        "yourResponsibilities": "Logo, photographs, project details and RERA numbers, supplied within 5 working days of kickoff",
+        "additionalWork": "Extra pages, listing integrations, multilingual sites, custom features or portals"
+      }
+    },
+    "ec-website": {
+      "name": "Ecommerce Website",
+      "businessType": "ecommerce",
+      "amount": 500,
+      "billing": "one-time",
+      "summary": "A focused online storefront for businesses that need clear product discovery and a straightforward path to purchase.",
+      "includes": [
+        "UI/UX design on a Sociam store template",
+        "Copywriting for the core pages",
+        "Basic SEO and GEO setup",
+        "Domain-related coverage, as defined in your scope",
+        "Hosting and SSL, as defined in your scope",
+        "Payment gateway connection (gateway and transaction fees are paid by you)",
+        "Google Business Profile integration where applicable",
+        "Cross-device and checkout testing before launch"
+      ],
+      "scope": {
+        "status": "draft",
+        "pages": "Home, Shop, Collection, Product, Cart and Checkout, About, Contact, Policies",
+        "content": "Up to 25 products in up to 5 categories, entered from your spreadsheet",
+        "revisions": "2 rounds of revisions",
+        "timeline": "15 working days from receiving your product data",
+        "domain": "First-year registration of one .com or .in domain up to $15; renewals at cost; the domain is registered in your name",
+        "hosting": "12 months hosting and SSL included where Sociam hosts the store; hosted platforms such as Shopify bill their subscription to you directly",
+        "yourResponsibilities": "Product photographs, descriptions, prices, stock, policies and a payment gateway account",
+        "additionalWork": "More products, custom apps, subscriptions, marketplaces, ERP or inventory integrations"
+      }
+    }
+  },
+  "services": {
+    "custom-website": { "name": "Custom business website", "group": "website", "billing": "one-time", "quote": true },
+    "website-care": { "name": "Website care and maintenance", "group": "care", "billing": "monthly", "quote": true },
+    "landing-pages": { "name": "Campaign landing pages", "group": "leads", "billing": "one-time", "quote": true },
+    "lead-generation": { "name": "Lead generation campaigns", "group": "leads", "billing": "monthly", "quote": true },
+    "lead-qualification": { "name": "Lead capture and qualification", "group": "leads", "billing": "one-time", "quote": true },
+    "conversion": { "name": "Conversion optimisation", "group": "conversion", "billing": "monthly", "quote": true },
+    "seo": { "name": "SEO, AEO and GEO", "group": "marketing", "billing": "monthly", "quote": true },
+    "social": { "name": "Social media management", "group": "marketing", "billing": "monthly", "quote": true },
+    "content": { "name": "Content creation", "group": "marketing", "billing": "monthly", "quote": true },
+    "brand": { "name": "Brand strategy and management", "group": "marketing", "billing": "one-time", "quote": true },
+    "connect-ai": { "name": "Sociam Connect AI", "group": "ai", "billing": "one-time", "quote": true },
+    "crm": { "name": "CRM and workflow integration", "group": "ai", "billing": "one-time", "quote": true },
+    "routing": { "name": "Enquiry routing and follow-up automation", "group": "ai", "billing": "one-time", "quote": true },
+    "reporting": { "name": "Analytics and sales reporting", "group": "ai", "billing": "monthly", "quote": true }
+  },
+  "thirdPartyCosts": [
+    "Domain renewals after the first year",
+    "Payment gateway and transaction fees",
+    "Hosted platform subscriptions (for example Shopify) and paid apps",
+    "Advertising spend on any channel",
+    "Paid stock photography, fonts or plugins you request",
+    "WhatsApp Business API and messaging fees, where used"
+  ]
+}

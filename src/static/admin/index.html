@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sociam Pipeline</title>
+<link rel="icon" type="image/png" href="/assets/img/logo-96.png">
+<link rel="stylesheet" href="/assets/css/site.css">
+<style>
+  body{background:var(--paper)}
+  .ad-hdr{display:flex;align-items:center;gap:16px;height:64px;border-bottom:1px solid var(--line);background:var(--white)}
+  .ad-hdr .wrap{display:flex;align-items:center;gap:16px;max-width:1400px}
+  .ad-hdr b{font-weight:500}
+  .ad-tabs{display:flex;gap:4px;margin-left:24px}
+  .ad-tabs button{border:0;background:none;padding:8px 14px;border-radius:999px;cursor:pointer;color:var(--ink-2)}
+  .ad-tabs button[aria-selected="true"]{background:var(--olive-50);color:var(--olive-700);font-weight:500}
+  .ad-main{max-width:1400px;padding-block:28px 80px}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-bottom:24px}
+  .kpi{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+  .kpi span{font-size:.78rem;color:var(--slate)}
+  .kpi b{display:block;font-size:1.6rem;font-weight:500;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .kpi small{font-size:.75rem;color:var(--slate)}
+  .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+  .bar .input,.bar .select{min-height:40px;width:auto;padding-block:8px}
+  .tbl-wrap{overflow-x:auto;background:var(--white);border:1px solid var(--line);border-radius:var(--r)}
+  table{width:100%;border-collapse:collapse;font-size:.9rem}
+  th{font-size:.74rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr.lead-row{cursor:pointer}
+  tr.lead-row:hover td{background:var(--olive-50)}
+  tr.due td:first-child{box-shadow:inset 3px 0 0 var(--amber)}
+  .pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.75rem;font-weight:500;white-space:nowrap}
+  .p-High{background:#e7f0dc;color:#3c4615}.p-Medium{background:#f6efe3;color:#9a5b0f}.p-Low{background:var(--mist);color:var(--slate)}
+  .s-pill{background:var(--mist);color:var(--ink-2)}
+  .e-sent{color:var(--ok)}.e-failed,.e-not_configured{color:var(--err)}
+  .drawer{position:fixed;inset:0 0 0 auto;width:min(620px,100vw);background:var(--white);border-left:1px solid var(--line);box-shadow:-20px 0 60px -30px rgba(0,0,0,.3);overflow:auto;z-index:80;padding:24px}
+  .drawer h2{font-size:1.3rem}
+  .dl{display:grid;grid-template-columns:150px 1fr;gap:6px 14px;font-size:.9rem;margin:12px 0}
+  .dl dt{color:var(--slate)}.dl dd{margin:0;white-space:pre-wrap;word-break:break-word}
+  .sect{border-top:1px solid var(--line);padding-top:16px;margin-top:16px;display:grid;gap:12px}
+  .sect h3{font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+  .note{background:var(--mist);border-radius:var(--r-sm);padding:10px 12px;font-size:.88rem;white-space:pre-wrap}
+  .empty{padding:48px 24px;text-align:center;color:var(--slate)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:800px){.two{grid-template-columns:1fr}.dl{grid-template-columns:1fr}}
+  .ok-dot,.bad-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px}
+  .ok-dot{background:var(--ok)}.bad-dot{background:var(--err)}
+  .confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header class="ad-hdr"><div class="wrap">
+  <img src="/assets/img/logo-128.webp" width="36" height="36" alt="Sociam"><b>Pipeline</b>
+  <nav class="ad-tabs" role="tablist" hidden id="tabs">
+    <button role="tab" aria-selected="true" data-tab="pipeline">Leads</button>
+    <button role="tab" aria-selected="false" data-tab="overview">Overview</button>
+    <button role="tab" aria-selected="false" data-tab="setup">Setup</button>
+  </nav>
+  <span style="flex:1"></span><button class="btn btn-quiet btn-sm" id="signout" hidden>Sign out</button>
+</div></header>
+
+<main class="wrap ad-main">
+  <form id="login" class="card" style="max-width:380px;margin:60px auto" novalidate>
+    <h1 class="h3">Sign in</h1>
+    <div class="field"><label for="pw">Admin password</label><input class="input" id="pw" type="password" autocomplete="current-password"></div>
+    <p class="small" id="login-msg" style="color:var(--err)"></p>
+    <button class="btn btn-primary" type="submit">Sign in</button>
+  </form>
+
+  <section id="pipeline" hidden>
+    <div class="kpis" id="kpis-top"></div>
+    <div class="bar">
+      <input class="input" id="q" placeholder="Search name, email, business" aria-label="Search">
+      <select class="select" id="f-stage" aria-label="Stage"><option value="">All open stages</option></select>
+      <select class="select" id="f-pri" aria-label="Priority"><option value="">Any priority</option><option>High</option><option>Medium</option><option>Low</option></select>
+      <label class="small"><input type="checkbox" id="f-due"> Needs action only</label>
+      <span style="flex:1"></span><button class="btn btn-ghost btn-sm" id="reload">Refresh</button>
+    </div>
+    <div class="tbl-wrap"><table><thead><tr><th>Received</th><th>Contact</th><th>Need</th><th>Priority</th><th>Stage</th><th>Follow-up</th><th>Value (USD)</th><th>Email</th></tr></thead><tbody id="rows"></tbody></table><div class="empty" id="empty" hidden>No leads yet. Enquiries from the configurator, project brief and Ask Sociam will appear here.</div></div>
+  </section>
+
+  <section id="overview" hidden></section>
+  <section id="setup" hidden></section>
+</main>
+<aside class="drawer" id="drawer" hidden aria-label="Lead detail"></aside>
+<script src="/assets/js/admin.js" defer></script>
+</body>
+</html>

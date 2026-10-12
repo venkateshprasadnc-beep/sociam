@@ -1,0 +1,14 @@
+{
+  "_readme": "Transparent lead priority. Points add up; thresholds decide High / Medium / Low. Edit freely.",
+  "points": {
+    "businessType": { "real-estate": 3, "ecommerce": 2, "other": 1 },
+    "budget": { "under-300": 0, "300-1000": 2, "1000-5000": 3, "5000-plus": 4, "not-sure": 1 },
+    "timeline": { "asap": 3, "1-month": 2, "1-3-months": 1, "exploring": 0 },
+    "hasPhone": 1,
+    "hasBusinessName": 1,
+    "detailedRequirements": 1,
+    "multipleServices": 1,
+    "fromConfigurator": 1
+  },
+  "thresholds": { "high": 9, "medium": 5 }
+}

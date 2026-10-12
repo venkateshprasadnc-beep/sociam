@@ -1,0 +1,77 @@
+<!--meta {"page":"contact","path":"/contact/","nav":"contact","crumb":"Project brief","priority":"0.8","title":"Send a project brief — Sociam","description":"Tell Sociam what you are building. A short project brief for websites, lead generation, conversion, marketing or sales automation. Reply within one working day."} -->
+
+<section class="page-hero">
+  <div class="wrap split wide-r" style="align-items:start">
+    <div class="l stack-lg">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><span>Project brief</span></nav>
+      <h1 class="h1">Tell us what you're building.</h1>
+      <p class="lede">A few details are enough. Venkatesh reads every brief and replies within one working day with questions or a written scope.</p>
+      <div class="card">
+        <p class="small muted">Prefer a direct line?</p>
+        <p><a href="mailto:venki@sociam.in">venki@sociam.in</a></p>
+        <p class="small muted">Malleshwaram, Bengaluru 560003, India</p>
+      </div>
+      <p class="small muted">Looking for a website price? The <a href="/pricing/#configure">configurator</a> shows what's included first.</p>
+    </div>
+    <div class="r">
+      <form class="form card" data-form="brief" data-status="#brief-status" novalidate>
+        <fieldset class="field">
+          <legend>Your business</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="businessType" value="real-estate"><span>Real estate</span></label>
+            <label class="chip"><input type="radio" name="businessType" value="ecommerce"><span>Ecommerce</span></label>
+            <label class="chip"><input type="radio" name="businessType" value="other"><span>Other business</span></label>
+          </div>
+          <span class="msg"></span>
+        </fieldset>
+        <fieldset class="field">
+          <legend>What do you need most?</legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="need" value="website" checked><span>A website</span></label>
+            <label class="chip"><input type="radio" name="need" value="leads"><span>More qualified leads</span></label>
+            <label class="chip"><input type="radio" name="need" value="conversion"><span>Better conversion</span></label>
+            <label class="chip"><input type="radio" name="need" value="marketing"><span>Brand and marketing</span></label>
+            <label class="chip"><input type="radio" name="need" value="systems"><span>Smarter sales systems</span></label>
+            <label class="chip"><input type="radio" name="need" value="care"><span>Website care</span></label>
+          </div>
+        </fieldset>
+
+        <div class="row" data-show-type="real-estate" hidden>
+          <div class="field"><label for="b-role">Your role</label><select class="select" id="b-role" name="role"><option value="">Choose one</option><option>Developer or builder</option><option>Broker</option><option>Channel partner</option><option>Other</option></select></div>
+          <div class="field"><label for="b-projects">Active projects or listings</label><select class="select" id="b-projects" name="projects"><option value="">Choose one</option><option>1</option><option>2–5</option><option>6–20</option><option>More than 20</option></select></div>
+        </div>
+        <div class="row" data-show-type="ecommerce" hidden>
+          <div class="field"><label for="b-products">Number of products</label><select class="select" id="b-products" name="products"><option value="">Choose one</option><option>Up to 25</option><option>26–100</option><option>101–500</option><option>More than 500</option></select></div>
+          <div class="field"><label for="b-platform">Current platform</label><select class="select" id="b-platform" name="platform"><option value="">Choose one</option><option>None yet</option><option>Shopify</option><option>WooCommerce</option><option>Marketplaces only</option><option>Other</option></select></div>
+        </div>
+        <div class="row" data-show-need="leads conversion" hidden>
+          <div class="field"><label for="b-adspend">Monthly ad budget (USD)</label><select class="select" id="b-adspend" name="adBudget"><option value="">Choose one</option><option>Not advertising yet</option><option>Under $500</option><option>$500 – $2,000</option><option>$2,000 – $10,000</option><option>$10,000+</option></select></div>
+          <div class="field"><label for="b-markets">Target locations</label><input class="input" id="b-markets" name="markets" placeholder="For example North Bengaluru, Dubai"></div>
+        </div>
+        <div class="row" data-show-need="systems" hidden>
+          <div class="field"><label for="b-tools">Current CRM or tools</label><input class="input" id="b-tools" name="currentTools" placeholder="Zoho, HubSpot, spreadsheets, none"></div>
+          <div class="field"><label for="b-team">Sales team size</label><select class="select" id="b-team" name="teamSize"><option value="">Choose one</option><option>Just me</option><option>2–5</option><option>6–20</option><option>More than 20</option></select></div>
+        </div>
+
+        <div class="row">
+          <div class="field"><label for="b-name">Name</label><input class="input" id="b-name" name="name" autocomplete="name"><span class="msg"></span></div>
+          <div class="field"><label for="b-email">Work email</label><input class="input" id="b-email" name="email" type="email" autocomplete="email"><span class="msg"></span></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="b-biz">Business name <span class="opt">(optional)</span></label><input class="input" id="b-biz" name="businessName" autocomplete="organization"><span class="msg"></span></div>
+          <div class="field"><label for="b-phone">Phone or WhatsApp <span class="opt">(optional)</span></label><input class="input" id="b-phone" name="phone" type="tel" autocomplete="tel" placeholder="+91 …"><span class="msg"></span></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="b-country">Country</label><select class="select" id="b-country" name="country"><option value="">Choose a country</option><option>India</option><option>United States</option><option>United Kingdom</option><option>United Arab Emirates</option><option>Saudi Arabia</option><option>Qatar</option><option>Germany</option><option>France</option><option>Canada</option><option>Australia</option><option>Singapore</option><option>Other</option></select></div>
+          <div class="field"><label for="b-timeline">Timeline</label><select class="select" id="b-timeline" name="timeline"><option value="1-month">Within a month</option><option value="asap">As soon as possible</option><option value="1-3-months">In 1–3 months</option><option value="exploring">Just exploring</option></select></div>
+        </div>
+        <div class="field"><label for="b-budget">Budget range (USD)</label><select class="select" id="b-budget" name="budget"><option value="not-sure">Not sure yet</option><option value="under-300">Under $300</option><option value="300-1000">$300 – $1,000</option><option value="1000-5000">$1,000 – $5,000</option><option value="5000-plus">$5,000+</option></select></div>
+        <div class="field"><label for="b-req">What are you building?</label><textarea class="textarea" id="b-req" name="requirements" rows="4" placeholder="A few lines about your business, what you need and any deadline"></textarea></div>
+        <label class="consent field"><input type="checkbox" name="consent"> <span>Sociam may contact me by email or phone about this enquiry. See the <a href="/privacy/">privacy policy</a>.</span><span class="msg"></span></label>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="cta-row"><button class="btn btn-primary" type="submit">Send my brief <i class="arr"></i></button></div>
+      </form>
+      <div class="status" id="brief-status" hidden></div>
+    </div>
+  </div>
+</section>

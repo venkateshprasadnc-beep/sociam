@@ -1,0 +1,10 @@
+# Old and alternative paths
+/connect            /contact/                 301
+/get-started        /contact/                 301
+/stories/*          /insights/                301
+/solutions          /website-design/          301
+/real-estate        /real-estate-websites/    301
+/commerce           /ecommerce-websites/      301
+/ecommerce          /ecommerce-websites/      301
+/themes             /pricing/                 301
+/index.html         /                         301
