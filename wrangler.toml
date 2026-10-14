@@ -1,0 +1,20 @@
+name = "sociam"
+pages_build_output_dir = "public"
+compatibility_date = "2026-09-01"
+
+[vars]
+SITE_URL = "https://sociam.in"
+NOTIFY_EMAIL = "venki.sociam@gmail.com"
+# MAIL_FROM must be an address on a domain verified with Resend, e.g. "Sociam <leads@sociam.in>"
+MAIL_FROM = ""
+
+# Created 2026-10-14 (APAC), schema.sql already applied.
+[[d1_databases]]
+binding = "DB"
+database_name = "sociam"
+database_id = "f69418b9-762c-4ed8-9de9-21f42bdcba7d"
+
+# Secrets (never commit these): set with `wrangler pages secret put NAME`
+#   RESEND_API_KEY     transactional email
+#   ANTHROPIC_API_KEY  Ask Sociam assistant
+#   ADMIN_TOKEN        pipeline at /admin (24+ random characters)
