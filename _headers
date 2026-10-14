@@ -1,0 +1,26 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://open.er-api.com; frame-src https://calendly.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/admin
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+# Sociam Studio (Decap CMS) loads its editor from unpkg and talks to the GitHub API
+/cms
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.githubusercontent.com; media-src 'self' blob:; connect-src 'self' https://api.github.com https://unpkg.com; frame-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
+/cms/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.githubusercontent.com; media-src 'self' blob:; connect-src 'self' https://api.github.com https://unpkg.com; frame-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
