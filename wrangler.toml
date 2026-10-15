@@ -6,7 +6,7 @@ compatibility_date = "2026-09-01"
 SITE_URL = "https://sociam.in"
 NOTIFY_EMAIL = "venki.sociam@gmail.com"
 # MAIL_FROM must be an address on a domain verified with Resend, e.g. "Sociam <leads@sociam.in>"
-MAIL_FROM = ""
+MAIL_FROM = "Sociam <leads@sociam.in>"
 
 # Created 2026-10-14 (APAC), schema.sql already applied.
 [[d1_databases]]
